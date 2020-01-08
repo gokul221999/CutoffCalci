@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CALCI</title></head>
+
+<body>
+<center>
+<div class="background">
+  <div class="container">
+    <div class="screen">
+      
+        <div class="screenfull left">
+          <div class="applicationname">
+           
+              CUTOFF CALCI
+            
+          </div>
+        </div>
+        <div class="screenfull">
+          
+            <div class="applicationformsize">
+              <input type="text" class="applicationform" placeholder="TAMIL" id="ta">
+            </div>
+		<div class="applicationformsize">
+              <input type="text" class="applicationform" placeholder="ENGLISH" id="en">
+            </div>
+            <div class="applicationformsize">
+              <input  type="text"  class="applicationform"   placeholder="MATHS" id="maths">
+            </div>
+             <div class="applicationformsize">
+              <input  type="text"  class="applicationform"   placeholder="COMPUTER" id="comp">
+            </div>
+            <div class="applicationformsize">
+              <input  type="text"  class="applicationform"   placeholder="PHYSICS" id="phy" >
+            </div>
+		<div class="applicationformsize">
+              <input type="text" class="applicationform" placeholder="CHEMISTRY" id="che">
+            </div>
+             
+              <input type="button" name="" value="show Data" class="applicationformbutton" onclick="calci()">
+            </div>            
+          
+      </div>
+
+    </div>
+      
+  </div>
+</div>
+</center>
+<style>
+body {
+  background:aqua;
+  font-size: 10px;
+}
+
+body, button, input {
+  font-family: 'Times New Roman';
+}
+.screen {
+  background: blue;
+  border-radius: 10px;
+}
+.screenfull {
+  flex: 1;
+  padding: 50px;
+}
+.applicationname {
+  color: white;
+  font-size: 26px;
+  text-transform: uppercase;
+  padding: 10px;
+}
+.applicationformsize {
+  margin-bottom: 15px;
+}
+.applicationform {
+  padding: 10px 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #111;
+  font-size: 14px;
+  text-transform: uppercase;
+  color:white;
+  }
+
+.applicationform::placeholder {
+  color: white;
+}
+.applicationformbutton {
+  background: none;
+  border: none;
+  color: red;
+  font-size: 24px;
+  cursor: pointer;
+  outline: none;
+  text-transform: uppercase;
+}
+
+.applicationformbutton:hover {
+  color: violet;
+}
+  </style> 
+
+<script>
+  
+const calci = () =>{
+  var ta=document.getElementById('ta').value;
+  var en = document.getElementById('en').value;
+  var maths = document.getElementById('maths').value;
+  var comp = document.getElementById('comp').value;
+  var phy = document.getElementById('phy').value;
+  var che = document.getElementById('che').value;
+  var grades = "";
+  
+  var totalGrades = parseFloat(ta)+parseFloat(en) + parseFloat(maths) + parseFloat(comp) + parseFloat(phy)+parseFloat(che);
+  alert(totalGrades +" out of 1200");
+
+  var perc = (totalGrades/1200) * 100;
+  alert(perc+"%" );
+  
+  var cutoff=(maths/2)+(phy/4)+(che/4);
+  alert(cutoff+" out of 200");
+}
+</script>
+</body>
+</html>
